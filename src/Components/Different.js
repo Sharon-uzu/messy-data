@@ -30,6 +30,12 @@ const Different = () => {
                         <FaFileInvoice className='t-i'/>
                         <h6>E-Book</h6>
                     </div>
+
+                    <div>
+                        <FaFileInvoice className='t-i'/>
+                        <h6>E-Book</h6>
+                    </div>
+                    
                 </div>
             </div>
         </div>

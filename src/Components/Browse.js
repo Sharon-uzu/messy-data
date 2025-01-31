@@ -4,19 +4,19 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'; // Correct CSS import
 import 'swiper/css/pagination'; // Import pagination styles
 import 'swiper/css/navigation'; // Import navigation styles
-import m1 from '../Images/data_Agriculture.jpg';
-import m2 from '../Images/data_Banking and FinTech-.jpg';
-import m3 from '../Images/data_E-commerce.jpg';
-import m4 from '../Images/data_Manufacturing.jpg';
-import m5 from '../Images/data_Politics.jpg';
-import m6 from '../Images/data_Restaurant.jpg';
-import m7 from '../Images/data_Social media.jpg';
-import m8 from '../Images/data_Sports.jpg';
-import m9 from '../Images/data_education.jpg';
-import m10 from '../Images/data_event & entertainment.jpg';
-import m11 from '../Images/data_health.jpg';
-import m12 from '../Images/data_logistics.jpg';
-import m13 from '../Images/data_real estate.jpg';
+import m1 from '../Images/web asset ii_Agriculture.jpg';
+import m2 from '../Images/web asset ii_Banking and FinTech-.jpg';
+import m3 from '../Images/web asset ii_E-commerce.jpg';
+import m4 from '../Images/web asset ii_Manufacturing.jpg';
+import m5 from '../Images/web asset ii_Politics.jpg';
+import m6 from '../Images/web asset ii_Restaurant.jpg';
+import m7 from '../Images/web asset ii_Social media.jpg';
+import m8 from '../Images/web asset ii_Sports.jpg';
+import m9 from '../Images/web asset ii_education.jpg';
+import m10 from '../Images/web asset ii_event & entertainment.jpg';
+import m11 from '../Images/web asset ii_health.jpg';
+import m12 from '../Images/web asset ii_logistics.jpg';
+import m13 from '../Images/web asset ii_real estate.jpg';
 
 import { Autoplay, Pagination, Navigation } from 'swiper/modules'; // Correct module import
 
@@ -102,6 +102,10 @@ const Browse = () => {
               spaceBetween: 15,
             },
             480: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            0: {
               slidesPerView: 1,
               spaceBetween: 10,
             },

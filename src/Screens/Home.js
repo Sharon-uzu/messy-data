@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaBars } from "react-icons/fa";
 import { RiCloseFill } from "react-icons/ri";
-import logo from '../Images/mds .jpg';
+import logo from '../Images/messy data.png';
 import Hero from '../Components/Hero';
 import Browse from '../Components/Browse';
 import Different from '../Components/Different';
@@ -10,6 +10,7 @@ import CoursesOverview from '../Components/CoursesOverview';
 import How from '../Components/How';
 import Footer from '../Components/Footer';
 import Video from '../Components/Video';
+import Faq from '../Components/Faq';
 
 const Home = () => {
     const [category, setCategory] = useState(false);
@@ -31,6 +32,10 @@ const Home = () => {
         setClick(!click);
         document.body.style.overflow = click ? 'auto' : 'hidden';
     };
+    const closeClick = () => {
+        setClick(!click);
+        document.body.style.overflow =  'auto' 
+    };
 
     const openCategories = () => {
         setCategory(!category);
@@ -47,28 +52,20 @@ const Home = () => {
         <div>
             <header>
                 <nav>
-                    <Link to='/'><img src={logo} alt="Logo" /></Link>
+                    <Link to='/' onClick={closeClick}><img src={logo} alt="Logo" /></Link>
 
                     <div className='bars' onClick={handleClick}>
                         {click ? (<RiCloseFill id='close' />) : (<FaBars id='bar' />)}
                     </div>
 
                     <ul className={click ? 'active' : 'ul'}>
-                        <li className='categ' onClick={openCategories}>
-                            Categories
-                            {category && (
-                                <div>
-                                    <p><Link to="/dataset">Real Estate</Link></p>
-                                    <p><Link to="/dataset">Finance</Link></p>
-                                    <p><Link to="/dataset">Technology</Link></p>
-                                    <p><Link to="/dataset">Education</Link></p>
-                                </div>
-                            )}
-                        </li>
+
+                        <Link to="/about" onClick={closeClick}>About Us</Link>
+                   
                         <form className='s-form'>
                             <input type="search" placeholder='Search' />
                         </form>
-                        <Link to="/dataset"><button>Download DataSet</button></Link>
+                        <Link to="/dataset" onClick={closeClick}><button>Download DataSet</button></Link>
 
                         {loggedIn ? (
                             <>
@@ -79,8 +76,8 @@ const Home = () => {
                             </>
                         ) : (
                             <>
-                                <Link to="/login"><button>Login</button></Link>
-                                <Link to="/signup"><button className='btn'>Sign up</button></Link>
+                                <Link to="/login" onClick={closeClick}><button>Login</button></Link>
+                                <Link to="/signup" onClick={closeClick}><button className='btn'>Sign up</button></Link>
                             </>
                         )}
                     </ul>
@@ -92,6 +89,7 @@ const Home = () => {
             <Different />
             <CoursesOverview />
             <Video />
+            <Faq/>
             <Footer />
         </div>
     );

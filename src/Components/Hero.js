@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import  Typewriter  from 'typewriter-effect';
+
 
 const Hero = () => {
   return (
@@ -7,9 +9,20 @@ const Hero = () => {
       <div className="dk"></div>
       <div className="hero-s">
         <div className="hero">
-          <h1>Discover & Access Data Information</h1>
+          <h1><Typewriter
+                    options={{
+                      autoStart: true,
+                      loop: true,
+                      delay: 50,
+                      strings:[
+                        "Your Ultimate Hub for Data Cleaning, Analysis & Mastery.",
+                        "Elevate Your Analytics Game with Our Practice Datasets.",
+                        "Refine Your Data Skills with Challenging, Real-World Datasets.", 
+                      ],
+                  }}
+                  /></h1>
           <p>Digital marketplace for buy and sellfrom the world's top artist.</p>
-          <Link><button>Get Started</button></Link>
+          <Link to='/dataset'><button>Get Started</button></Link>
 
           <div className="numbers">
             <div>

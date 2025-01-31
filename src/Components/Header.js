@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaBars } from "react-icons/fa";
 import { RiCloseFill } from "react-icons/ri";
-import logo from '../Images/mds .jpg';
+import logo from '../Images/messy data.png';
 
 const Header = () => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -27,7 +27,13 @@ const Header = () => {
     const handleClick = () => {
         setClick(!click);
         setDropdownOpen(!isDropdownOpen);
-        document.body.style.overflow = click ? 'auto' : 'hidden'; // Disable or enable scrolling
+        document.body.style.overflow = click ? 'auto' : 'hidden'; 
+    }
+
+    const closeClick = () => {
+        setClick(!click);
+        setDropdownOpen(!isDropdownOpen);
+        document.body.style.overflow =  'auto' 
     }
 
     const openCategories = () => {
@@ -35,7 +41,7 @@ const Header = () => {
     }
 
     const handleInitialClick = () => {
-        navigate('/dashboard'); // Redirect to the dashboard on click
+        navigate('/dashboard'); 
     }
 
     return (
@@ -49,26 +55,17 @@ const Header = () => {
                     </div>
 
                     <ul className={click ? 'active' : 'ul'}>
-                        <li className='categ' onClick={openCategories}>
-                            Categories
-                            {category && (
-                                <div>
-                                    <p><Link to="/dataset">Real Estate</Link></p>
-                                    <p><Link to="/dataset">Finance</Link></p>
-                                    <p><Link to="/dataset">Technology</Link></p>
-                                    <p><Link to="/dataset">Education</Link></p>
-                                </div>
-                            )}
-                        </li>
+                        <Link to="/about" onClick={closeClick}>About Us</Link>
+                        
                         <form className='s-form'>
                             <input type="search" placeholder='Search' />
                         </form>
-                        <Link to="/dataset"><button>Download DataSet</button></Link>
+                        <Link to="/dataset" onClick={closeClick}><button>Download DataSet</button></Link>
 
                         {!loggedIn ? (
                             <>
-                                <Link to="/login"><button>Login</button></Link>
-                                <Link to="/signup"><button className='btn'>Sign up</button></Link>
+                                <Link to="/login" onClick={closeClick}><button>Login</button></Link>
+                                <Link to="/signup" onClick={closeClick}><button className='btn'>Sign up</button></Link>
                             </>
                         ) : (
                             <div className="user-initial" onClick={handleInitialClick}>

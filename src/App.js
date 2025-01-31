@@ -11,6 +11,7 @@ import Profile from './Screens/Profile';
 import { useState } from 'react';
 import Admin from './Screens/Admin';
 import UploadDataset from './Screens/UploadDataset';
+import About from './Screens/About';
 
 function App() {
 
@@ -30,6 +31,8 @@ function App() {
           />} 
         />
         <Route path='/courseInfo/:id' element={<CourseInfo/>}/>
+        <Route path='/about' element={<About/>}/>
+
         <Route path='/categories' element={<Categories/>}/>
         <Route path='/dataset' element={<DataSet/>}/>
         <Route path='/login' element={<Login setLoggedIn={setLoggedIn} setUser={setUser} />}/>

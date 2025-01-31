@@ -50,7 +50,7 @@ const Faq = ({ toggleModal }) => {
 
   return (
     <div className='faqs'>
-      <h1>Frequently Asked Questions <h3 className='close' onClick={ toggleModal }>x</h3></h1>
+      <h1>Frequently Asked Questions</h1>
       <div className='w-r'>
         {Faqs.map((item, index) => (
           <div className="ques" key={item.id}>
